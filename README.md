@@ -36,6 +36,40 @@ O instalar manualmente:
 ```bash
 pip install numpy pandas matplotlib wfdb scipy jupyter
 ```
+### Obtener los Datos PTB-XL
+
+Los datos ECG no están incluidos en el repositorio por su tamaño. Descárgalos siguiendo estos pasos:
+
+#### Opción A: Descarga Automática
+```bash
+# Crear directorio de datos
+mkdir -p data/ptb-xl
+
+# Descargar dataset PTB-XL (esto puede tomar tiempo)
+wget -P data/ptb-xl https://physionet.org/static/published-projects/ptb-xl/ptb-xl-a-large-12-lead-electrocardiogram-database-1.0.3.zip
+
+# Descomprimir
+cd data/ptb-xl
+unzip ptb-xl-a-large-12-lead-electrocardiogram-database-1.0.3.zip
+```
+
+#### Opción B: Descarga Manual
+1. Ve a [PhysioNet PTB-XL](https://physionet.org/content/ptb-xl/1.0.3/)
+2. Descarga el archivo ZIP
+3. Extrae en `data/ptb-xl/`
+4. Asegúrate de tener esta estructura:
+```
+data/
+└── ptb-xl/
+    ├── records100/
+    │   └── 00000/
+    │       ├── 00004_lr.dat
+    │       └── 00004_lr.hea
+    └── records500/
+        └── 00000/
+            ├── 00004_hr.dat
+            └── 00004_hr.hea
+```
 
 ### Ejecución
 1. Clonar el repositorio
